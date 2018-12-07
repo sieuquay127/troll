@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<title>Thông Tin của bạn</title>
+<meta charset="UTF-8">
+<link rel="icon" href='https://thuthuatms.blogspot.com/favicon.ico'/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+<h1>Thông tin về bạn</h1>
+<script type="application/javascript">
+  function getIP(json) {
+    document.write("Ðịa chỉ IP của bạn là: ", json.ip);
+  }
+</script>
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+<button onclick="getLocation()">Lấy vị trí</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition, showError);
+} else {
+x.innerHTML = "Geolocation không được hỗ trợ bởi trình duyệt này.";
+}
+}
+
+function showPosition(position) {
+x.innerHTML = "Vĩ độ: " + position.coords.latitude +
+"<br>Kinh độ: " + position.coords.longitude;
+}
+
+function showError(error) {
+switch(error.code) {
+case error.PERMISSION_DENIED:
+x.innerHTML = "Bạn đã từ chối cho xác định vị trí nhưng chúng tôi vẫn có tọa độ địa lý của bạn bằng ransomware."
+break;
+case error.POSITION_UNAVAILABLE:
+x.innerHTML = "Thông tin vị trí không có sẵn."
+break;
+case error.TIMEOUT:
+x.innerHTML = "Yêu cầu vị trí người dùng vượt quá thời gian quy định."
+break;
+case error.UNKNOWN_ERROR:
+x.innerHTML = "Một lỗi xảy ra không rõ nguyên nhân."
+break;
+}
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>Full response: <pre id="details"></pre>
+    <script type="text/javascript">
+        $.get("https://ipinfo.io/json", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("Location: " + response.city + ", " + response.region);
+    $("#details").html(JSON.stringify(response, null, 4));
+}, "jsonp");
+    </script></body>
+</html>

